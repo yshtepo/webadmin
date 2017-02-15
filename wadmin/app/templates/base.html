@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='site3.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='admin.png')}}" type="image/png">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>WebAdmin Main</title>
+    {% endif %}
+  </head>
+  <body>
+    <div class="menu">Меню: <a href="/index">Главная</a> | <a href="/info">Инфо</a> |
+      <a href="/akt">Акты</a>
+    </div>
+    <hr>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

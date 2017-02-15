@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="base">
+  <form method="post" name="info" class="form">
+    {{form.hidden_tag()}}
+    <p>Введите ИНН клиента</p>
+    <p>{{form.inn(size=20)}}<input type="submit" value="Найти"></p>
+    {% for error in form.errors.inn %}
+    <span style="color: red">[{{error}}]</span>
+    {% endfor %}
+  </form>
+
+  <table class="simple-little-table">
+    <tr>
+      <th>@</th><th>Название</th><th>Статус</th><th>Дата начала обсл</th><th>Дата блокировки</th>
+    </tr>
+    <tr>
+      <td>{{arm}}</td><td>{{name}}</td><td>{{fenabled}}</td><td>{{sd}}</td><td>{{fd}}</td>
+    </tr>
+  </table>
+</div>
+
+
+{% endblock %}
